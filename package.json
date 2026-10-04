@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "test": "vitest run",
+  "dev": "tsx src/index.ts"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lorenatorrezan/ProjetoPraticoN1.git"
@@ -13,9 +14,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/lorenatorrezan/ProjetoPraticoN1/issues"
   },
-  "homepage": "https://github.com/lorenatorrezan/ProjetoPraticoN1#readme"
+  "homepage": "https://github.com/lorenatorrezan/ProjetoPraticoN1#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
 }
