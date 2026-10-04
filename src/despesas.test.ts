@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { totalGasto, maiorDespesa } from "./despesas";
+import { totalGasto, maiorDespesa, despesasDaCategoria } from "./despesas";
 
 describe("totalGasto", () => {
   it("soma os valores de várias despesas", () => {
@@ -27,5 +27,21 @@ describe("maiorDespesa", () => {
 
   it("retorna undefined para lista vazia", () => {
     expect(maiorDespesa([])).toBeUndefined();
+  });
+});
+
+describe("despesasDaCategoria", () => {
+  it("retorna só as despesas da categoria pedida", () => {
+    const mercado = { id: 1, descricao: "Mercado", valor: 10, categoria: "alimentacao" as const, mes: 1 };
+    const aluguel = { id: 2, descricao: "Aluguel", valor: 900, categoria: "moradia" as const, mes: 1 };
+    const padaria = { id: 3, descricao: "Padaria", valor: 15, categoria: "alimentacao" as const, mes: 2 };
+
+    expect(despesasDaCategoria([mercado, aluguel, padaria], "alimentacao")).toEqual([mercado, padaria]);
+  });
+
+  it("retorna lista vazia quando nenhuma despesa é da categoria", () => {
+    const aluguel = { id: 1, descricao: "Aluguel", valor: 900, categoria: "moradia" as const, mes: 1 };
+
+    expect(despesasDaCategoria([aluguel], "lazer")).toEqual([]);
   });
 });
