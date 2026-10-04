@@ -19,3 +19,7 @@ export function despesasDaCategoria(
 ): Despesa[] {
   return despesas.filter((despesa) => despesa.categoria === categoria);
 }
+
+export function adicionarDespesa(despesas: Despesa[], nova: Despesa): Despesa[] {
+  throw new Error("não implementado");
+}
