@@ -31,5 +31,5 @@ export function adicionarDespesa(despesas: Despesa[], nova: Despesa): Despesa[] 
 }
 
 export function removerDespesa(despesas: Despesa[], id: number): Despesa[] {
-  throw new Error("não implementado");
+  return despesas.filter((despesa) => despesa.id !== id);
 }
