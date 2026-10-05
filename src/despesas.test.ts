@@ -28,6 +28,13 @@ describe("maiorDespesa", () => {
   it("retorna undefined para lista vazia", () => {
     expect(maiorDespesa([])).toBeUndefined();
   });
+
+    it("em caso de empate, devolve a primeira", () => {
+    const a = { id: 1, descricao: "A", valor: 50, categoria: "lazer" as const, mes: 1 };
+    const b = { id: 2, descricao: "B", valor: 50, categoria: "lazer" as const, mes: 1 };
+
+    expect(maiorDespesa([a, b])).toEqual(a);
+  });
 });
 
 describe("despesasDaCategoria", () => {
